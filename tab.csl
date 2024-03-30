@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="zh-CN">
+  <info>
+    <title>Title as bibliography, numberic</title>
+    <id>http://www.zotero.org/styles/cltab</id>
+    <category citation-format="numeric"/>
+    <category field="generic-base"/>
+  </info>
+  <citation collapse="citation-number" after-collapse-delimiter=",">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout vertical-align="sup" delimiter="," prefix="[" suffix="]">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography entry-spacing="0" second-field-align="flush">
+    <layout suffix=".">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text variable="title"/>
+    </layout>
+  </bibliography>
+</style>
