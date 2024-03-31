@@ -37,6 +37,6 @@ config.format.asciiOnly = false;
 await Deno.writeTextFile(
   "bibout.bib",
   new Cite(bibs).format(
-    "biblatex",
+    "bibtex",
   ),
 );
