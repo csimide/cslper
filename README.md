@@ -28,8 +28,18 @@
 
 其中 `tab.csl` 是本 Repo 里的 `tab.csl` 文件。
 
+## 原理解释
+
+- `main.ts` 使用 `citation-js` 将输入文件的所有参考文献条目都按指定的 CSL 处理成符合要求的格式，作为该条目的 `title` 生成新的 bibtex 文件。使用停用词法和 `language` 字段内是否包含 `en` 来判定参考文献的语种，并选用 `et al.` 或 `等`。
+
+- `tab.csl` 是一个编号式的 CSL 引注文件，但参考文献表部分只显示 bib 中的 `title` 部分。
+
+这两者结合，相当于使用脚本生成符合要求的引注条目，再在 typst 中引用。
+
 ## 附注
 
 参考 https://github.com/cherichy/BUAA-typst/blob/main/typstcite.md 。
+
+本 Repo 中 `locates-zh-CN.xml` 来自 [citation-style-language/locales@6de1dc29](https://github.com/citation-style-language/locales/blob/6de1dc298a357ef89b965c975eed967f211028c0/locales-zh-CN.xml)，采用 Creative Commons Attribution-ShareAlike 3.0 协议授权使用。原贡献者列表在此文件内。
 
 原本想 WASM 缝个 citation.js 到 typst，后来发现凑合一下也不是不能用.jpg

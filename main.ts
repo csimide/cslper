@@ -10,6 +10,8 @@ const template = await Deno.readTextFile(
   "000gb-t-7714-2015-numeric-bilingual.csl",
 );
 
+const cn_stopwords_regex = /[以定的理研分究析控基用方设计中]/;
+
 const bibs = JSON.parse(csljson);
 
 const templateName = "custom1";
@@ -20,8 +22,10 @@ config.locales.add("zh-CN", await Deno.readTextFile("locales-zh-CN.xml"));
 
 for (const i in bibs) {
   const cite = new Cite(bibs[i]);
-  const language = (typeof bibs[i]["language"] === "string" &&
-      bibs[i]["language"].toLowerCase().includes("en"))
+  const language = ((typeof bibs[i]["language"] === "string" &&
+      bibs[i]["language"].toLowerCase().includes("en")) ||
+      bibs[i]["title"] === "string" &&
+        !cn_stopwords_regex.test(bibs[i]["title"]))
     ? "en-US"
     : "zh-CN";
   const bib_l = cite.format("bibliography", {
