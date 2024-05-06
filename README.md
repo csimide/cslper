@@ -4,6 +4,12 @@
 
 在 GB/T 7714 标准中，中英文引文需要分别使用 `等` 或 `et al.` ，这一功能需要 CSL-M 扩展才能实现。Typst 使用的 CSL 解析器 [citationberg](https://github.com/typst/citationberg) 暂不支持 [CSL-M](https://citeproc-js.readthedocs.io/en/latest/csl-m/index.html) 扩展，因此需要“曲线”实现。
 
+> [!NOTE]
+>
+> 如果使用 GB/T 7714-2015-numeric 及其衍生格式，建议使用
+> https://github.com/nju-lug/modern-nju-thesis/issues/3
+> 方案。此 Repo 仅保留备查。
+
 注：本 Repo 只支持编号式（引用是上标 [1] [2-3] 这种），不支持作者年份式。
 
 ## 食用方法
